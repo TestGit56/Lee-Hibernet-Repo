@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="empDAOId" class="com.datageeks.dao.EmployeeDAO">
+		<property name="message"
+			value="Demo on Setter and Constructor Injections"></property>
+	</bean>
+	<bean id="empServiceId"
+		class="com.datageeks.dao.EmployeeService">
+		<property name="employeeDAORef" ref="empDAOId"></property>
+	</bean>
+	<bean id="empControllerId"
+		class="com.datageeks.dao.EmployeeController">
+		<constructor-arg ref="empServiceId"></constructor-arg>
+	</bean>
+
+</beans>

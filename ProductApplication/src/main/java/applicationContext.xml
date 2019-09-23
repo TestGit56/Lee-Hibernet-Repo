@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    https://www.springframework.org/schema/beans/spring-beans.xsd">
+   
+    <bean id="productId" class ="com.datageeks.dao.ProductBean">
+    <property name="productId" value ="111"></property>
+    <property name="productName" value ="Lenovo6s"></property>
+    <property name="productFloat" value ="65000012.12"></property>
+    
+    </bean>
+    <bean id="stockId" class ="com.datageeks.dao.StockDetails">
+      
+   <property name="productref" ref="productId"></property>
+      
+    </bean>
+    </beans>
